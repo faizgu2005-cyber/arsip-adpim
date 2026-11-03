@@ -1,0 +1,11 @@
+/vendor/
+/composer.lock
+/runtime/*
+!/runtime/.gitkeep
+!/runtime/.htaccess
+/uploads/*
+!/uploads/.gitkeep
+!/uploads/.htaccess
+/web/assets/*
+!/web/assets/.gitkeep
+/config/db-local.php
