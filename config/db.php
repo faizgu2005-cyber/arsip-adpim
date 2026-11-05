@@ -10,10 +10,8 @@ if (is_file($local)) {
 // Bawaan Laragon: pengguna root tanpa password.
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=127.0.0.1;dbname=arsip_sekretariat',
+    'dsn' => 'mysql:host=localhost;dbname=arsip',
     'username' => 'root',
-    'password' => '',
+    'password' => '@Biroadpim123',
     'charset' => 'utf8mb4',
 ];
-
-// testing perubahan

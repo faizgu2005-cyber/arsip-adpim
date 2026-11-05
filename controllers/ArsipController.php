@@ -34,8 +34,10 @@ class ArsipController extends Controller
     {
         $label = $this->label($jenis);
         $req = Yii::$app->request;
-        $q = trim((string) $req->get('q', ''));
-        $ket = (string) $req->get('ket', '');
+        $q = $req->get('q', '');
+        $q = is_string($q) ? trim($q) : '';
+        $ket = $req->get('ket', '');
+        $ket = is_string($ket) ? $ket : '';
         if (!in_array($ket, Arsip::KETERANGAN, true)) {
             $ket = '';
         }
@@ -124,6 +126,11 @@ class ArsipController extends Controller
         $req = Yii::$app->request;
         if (!$req->isPost || !$model->load($req->post())) {
             return false;
+        }
+        foreach (['judul', 'tanggal', 'keterangan', 'hapus_file'] as $atribut) {
+            if (is_array($model->$atribut) || is_object($model->$atribut)) {
+                throw new \yii\web\BadRequestHttpException('Format data arsip tidak valid.');
+            }
         }
         $model->berkas = UploadedFile::getInstance($model, 'berkas');
         return $model->simpan();

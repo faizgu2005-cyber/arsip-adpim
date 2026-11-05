@@ -16,7 +16,10 @@ class LoginForm extends Model
     public function rules()
     {
         return [
+            ['username', 'trim', 'skipOnArray' => true],
             [['username', 'password'], 'required', 'message' => '{attribute} wajib diisi.'],
+            ['username', 'string', 'max' => 50],
+            ['password', 'string', 'max' => 4096],
         ];
     }
 

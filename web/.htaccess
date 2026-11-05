@@ -1,6 +1,8 @@
 Options -Indexes
 
 RewriteEngine on
+# Semua permintaan PHP harus melewati bootstrap aplikasi.
+RewriteRule ^(?!index\.php$).*\.php(?:/|$) - [F,L,NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.php

@@ -44,8 +44,13 @@ class SiteController extends Controller
         $this->layout = 'login';
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+        if ($model->load(Yii::$app->request->post())) {
+            if (!is_string($model->username) || !is_string($model->password)) {
+                throw new \yii\web\BadRequestHttpException('Format username atau password tidak valid.');
+            }
+            if ($model->login()) {
+                return $this->goBack();
+            }
         }
         $model->password = '';
         return $this->render('login', ['model' => $model]);

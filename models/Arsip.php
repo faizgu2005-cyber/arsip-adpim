@@ -54,10 +54,13 @@ class Arsip extends ActiveRecord
     public function rules()
     {
         return [
-            ['judul', 'trim'],
+            ['judul', 'trim', 'skipOnArray' => true],
+            ['!jenis', 'in', 'range' => array_keys(self::JENIS)],
             [['judul', 'tanggal', 'keterangan'], 'required'],
             ['judul', 'string', 'max' => 500],
             ['tanggal', 'date', 'format' => 'php:Y-m-d', 'message' => 'Tanggal tidak valid.'],
+            ['tanggal', 'compare', 'compareValue' => '1000-01-01', 'operator' => '>=', 'message' => 'Tanggal minimal 1 Januari 1000.'],
+            ['tanggal', 'compare', 'compareValue' => '9999-12-31', 'operator' => '<=', 'message' => 'Tanggal maksimal 31 Desember 9999.'],
             ['keterangan', 'in', 'range' => self::KETERANGAN, 'message' => 'Keterangan tidak valid.'],
             ['hapus_file', 'boolean'],
             ['berkas', 'file',
@@ -124,10 +127,26 @@ class Arsip extends ActiveRecord
             $this->file_stored = null;
         }
 
-        if (!$this->save(false)) {
+        try {
+            $tersimpan = $this->save(false);
+        } catch (\Throwable $e) {
             if ($baru) {
                 @unlink(self::folderUnggah() . DIRECTORY_SEPARATOR . $baru);
             }
+            $this->file_stored = $lama;
+            $this->file_name = $this->getOldAttribute('file_name');
+            Yii::error($e, __METHOD__);
+            $this->addError('berkas', 'Data gagal disimpan. Silakan coba lagi atau hubungi administrator.');
+            return false;
+        }
+
+        if (!$tersimpan) {
+            if ($baru) {
+                @unlink(self::folderUnggah() . DIRECTORY_SEPARATOR . $baru);
+            }
+            $this->file_stored = $lama;
+            $this->file_name = $this->getOldAttribute('file_name');
+            $this->addError('berkas', 'Data gagal disimpan. Silakan coba lagi.');
             return false;
         }
 

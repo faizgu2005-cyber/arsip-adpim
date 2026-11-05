@@ -1,0 +1,9 @@
+Options -Indexes
+
+RewriteEngine On
+
+# Jalankan aplikasi melalui entry point Yii di direktori web.
+RewriteRule ^$ %{REQUEST_URI}web/ [R=302,L]
+
+# Hanya direktori publik yang boleh diakses langsung melalui HTTP.
+RewriteRule ^(?!web(?:/|$)).+ - [F,L,NC]
