@@ -3,16 +3,8 @@
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
-// Kunci cookie dibuat otomatis sekali saja dan disimpan di folder runtime
-// (di luar folder web), jadi tidak perlu disunting manual.
-$keyFile = dirname(__DIR__) . '/runtime/cookie.key';
-if (!is_file($keyFile)) {
-    if (!is_dir(dirname($keyFile))) {
-        @mkdir(dirname($keyFile), 0775, true);
-    }
-    file_put_contents($keyFile, bin2hex(random_bytes(32)));
-}
-$cookieKey = trim((string) file_get_contents($keyFile));
+$prepareHosting = require __DIR__ . '/hosting.php';
+$cookieKey = $prepareHosting(dirname(__DIR__));
 
 return [
     'id' => 'arsip-sekretariat',
