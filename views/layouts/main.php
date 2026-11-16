@@ -19,6 +19,7 @@ $menu = [
     ['Sambutan', 'mic', ['arsip/index', 'jenis' => 'sambutan'], $ctrl === 'arsip' && $jenisAktif === 'sambutan'],
     ['Paparan', 'presentation', ['arsip/index', 'jenis' => 'paparan'], $ctrl === 'arsip' && $jenisAktif === 'paparan'],
     ['TOR', 'file', ['arsip/index', 'jenis' => 'tor'], $ctrl === 'arsip' && $jenisAktif === 'tor'],
+    ['Pengguna', 'users', ['pengguna/index'], $ctrl === 'pengguna'],
 ];
 
 $this->beginPage();
@@ -46,12 +47,15 @@ $this->beginPage();
     <div class="scrim" id="scrim" hidden></div>
 
     <aside class="sidebar" id="sidebar" aria-label="Menu utama">
-        <div class="brand-row">
-            <div class="brand-mark"><?= Tampil::icon('layers', 22) ?></div>
-            <div>
-                <strong>Arsip Sekretariat</strong>
-                <span>Sambutan, Paparan, dan TOR</span>
+        <div class="brand-block">
+            <div class="brand-row">
+                <img class="brand-emblem" src="<?= Tampil::aset('img/lambang-sumut.png') ?>" width="42" height="52" alt="Lambang Provinsi Sumatera Utara">
+                <div>
+                    <strong>Arsip Sekretariat</strong>
+                    <span>Sekretariat Daerah</span>
+                </div>
             </div>
+            <img class="brand-adpim" src="<?= Tampil::aset('img/adpim-putih.png') ?>" width="150" height="55" alt="ADPIM, Biro Administrasi Pimpinan Setdaprovsu">
         </div>
 
         <nav>
@@ -80,6 +84,7 @@ $this->beginPage();
             <button class="icon-btn burger" id="burger" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="sidebar">
                 <?= Tampil::icon('menu') ?>
             </button>
+            <img class="topbar-emblem" src="<?= Tampil::aset('img/lambang-sumut.png') ?>" width="29" height="36" alt="Lambang Provinsi Sumatera Utara">
             <h2><?= Html::encode($this->title) ?></h2>
             <div class="avatar" title="<?= Html::encode($nama) ?>"><?= Html::encode($inisial) ?></div>
         </header>

@@ -23,7 +23,8 @@ foreach ($j as $nama => $d) {
     $maks = max($maks, max($d['per']));
 }
 ?>
-<div class="page-head">
+<div class="page-head has-watermark">
+    <img class="watermark" src="<?= Tampil::aset('img/adpim-putih.png') ?>" width="190" height="70" alt="" aria-hidden="true">
     <div>
         <h1>Dashboard Overview</h1>
         <p>Selamat datang, <?= Html::encode(Yii::$app->user->identity->username) ?>.<span class="hide-sm"> <?= Html::encode(Tampil::tanggalPanjang()) ?>.</span></p>

@@ -13,7 +13,9 @@ $galat = $model->hasErrors() ? implode(' ', $model->getFirstErrors()) : '';
     <div class="login-box">
         <?= Html::beginForm(['site/login'], 'post', ['class' => 'login-card']) ?>
             <header class="login-brand">
-                <div class="brand-mark"><?= Tampil::icon('layers', 24) ?></div>
+                <div class="login-emblem">
+                    <img src="<?= Tampil::aset('img/lambang-sumut.png') ?>" width="64" height="80" alt="Lambang Provinsi Sumatera Utara">
+                </div>
                 <h1>Arsip Sekretariat</h1>
                 <p>Sambutan, Paparan, dan TOR</p>
             </header>
@@ -35,7 +37,7 @@ $galat = $model->hasErrors() ? implode(' ', $model->getFirstErrors()) : '';
                     <?= Html::activePasswordInput($model, 'password', [
                         'class' => 'input', 'id' => 'p', 'autocomplete' => 'current-password', 'required' => true,
                     ]) ?>
-                    <button type="button" class="icon-btn" id="lihat-password" aria-label="Tampilkan password">
+                    <button type="button" class="icon-btn" data-lihat="p" aria-label="Tampilkan password">
                         <?= Tampil::icon('eye', 18) ?>
                     </button>
                 </div>
@@ -44,6 +46,8 @@ $galat = $model->hasErrors() ? implode(' ', $model->getFirstErrors()) : '';
             <p class="err" role="alert"><?= Html::encode($galat) ?></p>
             <button class="btn primary" type="submit" style="width:100%">Masuk</button>
         <?= Html::endForm() ?>
-        <p class="login-foot">Sekretariat Daerah</p>
+        <div class="login-foot">
+            <img src="<?= Tampil::aset('img/adpim-putih.png') ?>" width="200" height="74" alt="ADPIM, Biro Administrasi Pimpinan Setdaprovsu">
+        </div>
     </div>
 </div>

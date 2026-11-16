@@ -132,12 +132,9 @@ button { cursor: pointer; }
 .input-wrap .input { padding-right: 44px; }
 .input-wrap .icon-btn { position: absolute; right: 2px; top: 1px; height: 40px; }
 .err { color: var(--danger); font-size: 13px; min-height: 20px; margin-bottom: 8px; }
+.hint { color: var(--muted); font-size: 12px; margin-top: 6px; }
 
 /* ---------- Login ---------- */
-.brand-mark {
-  width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; flex: none;
-  background: var(--brand); color: var(--brand-ink);
-}
 .brand-row { display: flex; align-items: center; gap: 12px; }
 .brand-row strong { display: block; font-family: var(--font-display); font-size: 18px; line-height: 1.2; }
 .brand-row span { font-size: 12px; opacity: 0.7; }
@@ -164,12 +161,18 @@ button { cursor: pointer; }
   .login-card { background: color-mix(in srgb, var(--surface) 93%, transparent); backdrop-filter: blur(14px); }
 }
 .login-brand { text-align: center; padding-bottom: 20px; margin-bottom: 22px; border-bottom: 1px solid var(--line); }
-.login-brand .brand-mark { margin: 0 auto 12px; width: 52px; height: 52px; border-radius: 14px; }
+.login-emblem {
+  width: 104px; height: 104px; margin: 0 auto 12px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--surface-2); border: 1px solid var(--line);
+}
+.login-emblem img { height: 80px; width: auto; display: block; }
 .login-brand h1 { font-size: 24px; }
 .login-brand p { color: var(--muted); font-size: 13px; margin-top: 4px; }
 .login-card h2 { font-size: 20px; }
 .login-card .sub { color: var(--muted); margin: 4px 0 22px; font-size: 14px; }
-.login-foot { color: rgba(255, 255, 255, 0.75); font-size: 12px; letter-spacing: 0.04em; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); }
+/* Logo ADPIM berwarna putih: dipasang di atas foto latar yang digelapkan. */
+.login-foot img { display: block; width: 200px; max-width: 70vw; height: auto; opacity: 0.85; filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.55)); }
 
 /* ---------- Kerangka aplikasi ---------- */
 .sidebar {
@@ -182,6 +185,9 @@ button { cursor: pointer; }
 }
 .sidebar.open { transform: none; visibility: visible; box-shadow: var(--shadow-md); }
 .sidebar .brand-row { padding: 0 6px; }
+.brand-block { display: flex; flex-direction: column; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.brand-emblem { width: auto; height: 52px; display: block; flex: none; }
+.brand-adpim { width: 150px; height: auto; margin-left: 6px; opacity: 0.85; display: block; }
 .sidebar nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
 .nav-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--side-muted); padding: 0 12px 6px; }
 .navlink {
@@ -214,6 +220,7 @@ button { cursor: pointer; }
 }
 .burger { border: 1px solid var(--line-strong); background: var(--surface); }
 .topbar h2 { font-size: 19px; flex: 1; min-width: 0; }
+.topbar-emblem { height: 36px; width: auto; display: block; flex: none; }
 .topbar .avatar { width: 34px; height: 34px; font-size: 13px; }
 main {
   max-width: 1180px; margin: 0 auto;
@@ -223,7 +230,7 @@ main {
 @media (min-width: 1024px) {
   .sidebar { transform: none; visibility: visible; box-shadow: none; }
   .content { margin-left: 272px; }
-  .burger, .scrim { display: none; }
+  .burger, .scrim, .topbar-emblem { display: none; }
   .topbar { padding-left: 32px; padding-right: 32px; }
   main { padding-left: 32px; padding-right: 32px; padding-top: 28px; }
 }
@@ -231,6 +238,15 @@ main {
 .page-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 14px; margin-bottom: 22px; }
 .page-head h1 { font-size: clamp(24px, 3vw, 30px); }
 .page-head p { color: var(--muted); margin-top: 4px; }
+/* Logo ADPIM sebagai watermark: putih, jadi dibalik menjadi gelap pada tema terang. */
+.page-head.has-watermark { position: relative; }
+.has-watermark > div { position: relative; }
+.watermark {
+  position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  width: 190px; height: auto; opacity: 0.07; filter: invert(1);
+  pointer-events: none; user-select: none;
+}
+@media (prefers-color-scheme: dark) { .watermark { filter: none; } }
 
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); min-width: 0; }
 .card-pad { padding: 20px; }
@@ -289,6 +305,7 @@ a.stat:hover { border-color: var(--brand); }
 .chip.ket-gub { background: var(--gub-bg); color: var(--gub); }
 .chip.ket-wagub { background: var(--wagub-bg); color: var(--wagub); }
 .chip.ket-sekda { background: var(--sekda-bg); color: var(--sekda); }
+.chip.me { background: var(--brand-soft); color: var(--brand); margin-left: 8px; }
 
 /* ---------- Tabel ---------- */
 .table-card { overflow: hidden; }
@@ -389,6 +406,7 @@ dialog.dialog::backdrop { background: rgba(5, 15, 10, 0.55); }
   .page-head .btn { width: 100%; }
   /* Dashboard dipadatkan agar muat dalam satu layar HP. */
   .hide-sm { display: none; }
+  .watermark { width: 150px; }
   main { padding-top: 16px; padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)); }
   .page-head { margin-bottom: 14px; gap: 10px; }
   .stats { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; margin-bottom: 10px; }
@@ -448,6 +466,11 @@ dialog.dialog::backdrop { background: rgba(5, 15, 10, 0.55); }
   main { padding-top: 14px; }
 }
 @keyframes sheet { from { transform: translateY(40px); opacity: 0.6; } }
+
+/* Daftar pengguna hanya punya dua isian, jadi kartu di HP dibuat satu kolom. */
+@media (max-width: 719px) {
+  .table-pengguna tr { grid-template-columns: minmax(0, 1fr); grid-template-areas: "judul" "tgl"; gap: 4px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }

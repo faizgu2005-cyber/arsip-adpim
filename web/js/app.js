@@ -15,15 +15,16 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') menu(false); });
   }
 
-  // Tampilkan/sembunyikan password
-  var lihat = $('#lihat-password'), pw = $('#p');
-  if (lihat && pw) {
+  // Tampilkan/sembunyikan password: <button data-lihat="id-isian">
+  Array.prototype.forEach.call(document.querySelectorAll('[data-lihat]'), function (lihat) {
+    var pw = document.getElementById(lihat.getAttribute('data-lihat'));
+    if (!pw) return;
     lihat.addEventListener('click', function () {
       var tampil = pw.type === 'password';
       pw.type = tampil ? 'text' : 'password';
       lihat.setAttribute('aria-label', tampil ? 'Sembunyikan password' : 'Tampilkan password');
     });
-  }
+  });
 
   // Filter keterangan langsung dikirim
   var sel = $('[data-kirim-otomatis]');
