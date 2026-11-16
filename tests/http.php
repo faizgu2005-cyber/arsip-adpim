@@ -101,7 +101,33 @@ try {
         halaman('/' . $jenis . '/' . $id . '/hapus', 302, http_build_query(['_csrf-arsip' => $csrf]));
         cekHttp(app\models\Arsip::findOne($id) === null, 'Hapus arsip: ' . $jenis);
     }
+    // Tambah pengguna: daftar, formulir, validasi, lalu simpan dan masuk dengan akun baru.
+    $baru = $prefix . '_b';
+    $passBaru = bin2hex(random_bytes(8));
+    $daftar = halaman('/pengguna');
+    cekHttp(strpos($daftar, $prefix) !== false && strpos($daftar, 'Tambah Pengguna') !== false, 'Daftar pengguna tampil');
+    halaman('/pengguna/tambah');
+    $body = halaman('/pengguna/tambah', 200, http_build_query(['_csrf-arsip' => $csrf, 'UserForm' => [
+        'username' => $baru, 'password' => $passBaru, 'password_ulang' => 'beda',
+    ]]));
+    cekHttp(strpos($body, 'Ulangi password harus sama') !== false && app\models\User::findByUsername($baru) === null, 'Ulangi password berbeda ditolak');
+    $body = halaman('/pengguna/tambah', 200, http_build_query(['_csrf-arsip' => $csrf, 'UserForm' => [
+        'username' => $prefix, 'password' => $passBaru, 'password_ulang' => $passBaru,
+    ]]));
+    cekHttp(strpos($body, 'Username sudah dipakai') !== false, 'Username ganda ditolak');
+    halaman('/pengguna/tambah', 302, http_build_query(['_csrf-arsip' => $csrf, 'UserForm' => [
+        'username' => $baru, 'password' => $passBaru, 'password_ulang' => $passBaru,
+    ]]));
+    $userBaru = app\models\User::findByUsername($baru);
+    cekHttp($userBaru !== null && $userBaru->validatePassword($passBaru), 'Pengguna baru tersimpan dengan password ter-hash');
+    cekHttp(strpos(halaman('/pengguna'), $baru) !== false, 'Pengguna baru muncul di daftar');
     halaman('/keluar', 405);
+    halaman('/keluar', 302, http_build_query(['_csrf-arsip' => $csrf]));
+    halaman('/pengguna', 302);
+    $csrf = tokenHttp(halaman('/masuk'));
+    halaman('/masuk', 302, http_build_query(['_csrf-arsip' => $csrf, 'LoginForm' => ['username' => $baru, 'password' => $passBaru]]));
+    cekHttp(strpos(halaman('/'), $baru) !== false, 'Pengguna baru dapat masuk');
+    $csrf = tokenHttp(halaman('/'));
     halaman('/keluar', 302, http_build_query(['_csrf-arsip' => $csrf]));
     halaman('/tor', 302);
     echo 'Semua pengujian HTTP lulus.', PHP_EOL;
@@ -109,7 +135,7 @@ try {
     foreach (app\models\Arsip::find()->where(['like', 'judul', $prefix])->all() as $arsip) {
         $arsip->delete();
     }
-    Yii::$app->db->createCommand()->delete('{{%user}}', ['username' => $prefix])->execute();
+    Yii::$app->db->createCommand()->delete('{{%user}}', ['like', 'username', $prefix . '%', false])->execute();
     if (is_file($temp)) {
         unlink($temp);
     }

@@ -1,0 +1,788 @@
+2026-11-16 17:08:31 [::1][-][hcejgu0jc1oednoo526qat4tq9][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin_arsipp'@'localhost' (using password: YES) in C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php:721
+Stack trace:
+#0 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(721): PDO->__construct('mysql:host=loca...', 'admin_arsipp', 'fadliaja123', NULL)
+#1 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(636): yii\db\Connection->createPdoInstance()
+#2 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1066): yii\db\Connection->open()
+#3 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1053): yii\db\Connection->getMasterPdo()
+#4 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(401): yii\db\Connection->getSlavePdo(true)
+#5 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(425): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(58): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\QueryBuilder.php(118): yii\base\BaseObject->__construct(Array)
+#9 [internal function]: yii\db\QueryBuilder->__construct(Object(yii\db\Connection), Array)
+#10 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(418): ReflectionClass->newInstanceArgs(Array)
+#11 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(174): yii\di\Container->build('yii\\db\\mysql\\Qu...', Array, Array)
+#12 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\BaseYii.php(350): yii\di\Container->get('yii\\db\\mysql\\Qu...', Array)
+#13 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(265): yii\BaseYii::createObject('yii\\db\\mysql\\Qu...', Array)
+#14 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#15 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(883): yii\db\Schema->getQueryBuilder()
+#16 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(157): yii\db\Connection->getQueryBuilder()
+#17 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(481): yii\db\Query->createCommand(Object(yii\db\Connection))
+#18 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(368): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#19 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(60): yii\db\Query->count()
+#20 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(38): app\models\LoginForm->terblokir('::1')
+#21 C:\laragon\www\arsip-adpim-main\controllers\SiteController.php(51): app\models\LoginForm->login()
+#22 [internal function]: app\controllers\SiteController->actionLogin()
+#23 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#24 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(182): yii\base\InlineAction->runWithParams(Array)
+#25 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Module.php(547): yii\base\Controller->runAction('login', Array)
+#26 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Application.php(105): yii\base\Module->runAction('site/login', Array)
+#27 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Application.php(382): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 C:\laragon\www\arsip-adpim-main\web\index.php(22): yii\base\Application->run()
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user 'admin_arsipp'@'localhost' (using password: YES) in C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php:647
+Stack trace:
+#0 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1066): yii\db\Connection->open()
+#1 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1053): yii\db\Connection->getMasterPdo()
+#2 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(401): yii\db\Connection->getSlavePdo(true)
+#3 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(425): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(58): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\QueryBuilder.php(118): yii\base\BaseObject->__construct(Array)
+#7 [internal function]: yii\db\QueryBuilder->__construct(Object(yii\db\Connection), Array)
+#8 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(418): ReflectionClass->newInstanceArgs(Array)
+#9 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(174): yii\di\Container->build('yii\\db\\mysql\\Qu...', Array, Array)
+#10 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\BaseYii.php(350): yii\di\Container->get('yii\\db\\mysql\\Qu...', Array)
+#11 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(265): yii\BaseYii::createObject('yii\\db\\mysql\\Qu...', Array)
+#12 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#13 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(883): yii\db\Schema->getQueryBuilder()
+#14 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(157): yii\db\Connection->getQueryBuilder()
+#15 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(481): yii\db\Query->createCommand(Object(yii\db\Connection))
+#16 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(368): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#17 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(60): yii\db\Query->count()
+#18 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(38): app\models\LoginForm->terblokir('::1')
+#19 C:\laragon\www\arsip-adpim-main\controllers\SiteController.php(51): app\models\LoginForm->login()
+#20 [internal function]: app\controllers\SiteController->actionLogin()
+#21 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#22 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(182): yii\base\InlineAction->runWithParams(Array)
+#23 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Module.php(547): yii\base\Controller->runAction('login', Array)
+#24 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Application.php(105): yii\base\Module->runAction('site/login', Array)
+#25 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Application.php(382): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 C:\laragon\www\arsip-adpim-main\web\index.php(22): yii\base\Application->run()
+#27 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 1045
+    [2] => Access denied for user 'admin_arsipp'@'localhost' (using password: YES)
+)
+
+2026-11-16 17:08:31 [::1][-][hcejgu0jc1oednoo526qat4tq9][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-arsip' => 'be-sO6KRUdD7qnrlMyiuycnqGzK8es-coDDNdmrtGjRU3_hS5tIbs4nHCaxga_25mYVuQ-42u-6ZeagiDJ0qfA=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => '123456'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'ARSIPSESS' => 'hcejgu0jc1oednoo526qat4tq9'
+    '_csrf-arsip' => '33b96a40a28f41f7d8d26a6857829610b6f308f881b4644cd86aebdd1ec25331a:2:{i:0;s:11:\"_csrf-arsip\";i:1;s:32:\"90TiDCJcrmsISCSpPouqRLtr9IeTfp0H\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost:8090/'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\laragon\\www\\arsip-adpim-main\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '61762'
+    'SERVER_SOFTWARE' => 'PHP 8.1.10 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8090'
+    'REQUEST_URI' => '/masuk'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\laragon\\www\\arsip-adpim-main\\web\\index.php'
+    'PATH_INFO' => '/masuk'
+    'PHP_SELF' => '/index.php/masuk'
+    'HTTP_HOST' => 'localhost:8090'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '165'
+    'HTTP_CONTENT_LENGTH' => '165'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://localhost:8090'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8090/masuk'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,id;q=0.8'
+    'HTTP_COOKIE' => 'ARSIPSESS=hcejgu0jc1oednoo526qat4tq9; _csrf-arsip=33b96a40a28f41f7d8d26a6857829610b6f308f881b4644cd86aebdd1ec25331a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22_csrf-arsip%22%3Bi%3A1%3Bs%3A32%3A%2290TiDCJcrmsISCSpPouqRLtr9IeTfp0H%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1794823711.8033
+    'REQUEST_TIME' => 1794823711
+]
+2026-11-16 17:08:41 [::1][-][hcejgu0jc1oednoo526qat4tq9][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin_arsipp'@'localhost' (using password: YES) in C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php:721
+Stack trace:
+#0 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(721): PDO->__construct('mysql:host=loca...', 'admin_arsipp', 'fadliaja123', NULL)
+#1 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(636): yii\db\Connection->createPdoInstance()
+#2 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1066): yii\db\Connection->open()
+#3 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1053): yii\db\Connection->getMasterPdo()
+#4 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(401): yii\db\Connection->getSlavePdo(true)
+#5 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(425): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(58): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\QueryBuilder.php(118): yii\base\BaseObject->__construct(Array)
+#9 [internal function]: yii\db\QueryBuilder->__construct(Object(yii\db\Connection), Array)
+#10 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(418): ReflectionClass->newInstanceArgs(Array)
+#11 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(174): yii\di\Container->build('yii\\db\\mysql\\Qu...', Array, Array)
+#12 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\BaseYii.php(350): yii\di\Container->get('yii\\db\\mysql\\Qu...', Array)
+#13 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(265): yii\BaseYii::createObject('yii\\db\\mysql\\Qu...', Array)
+#14 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#15 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(883): yii\db\Schema->getQueryBuilder()
+#16 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(157): yii\db\Connection->getQueryBuilder()
+#17 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(481): yii\db\Query->createCommand(Object(yii\db\Connection))
+#18 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(368): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#19 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(60): yii\db\Query->count()
+#20 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(38): app\models\LoginForm->terblokir('::1')
+#21 C:\laragon\www\arsip-adpim-main\controllers\SiteController.php(51): app\models\LoginForm->login()
+#22 [internal function]: app\controllers\SiteController->actionLogin()
+#23 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#24 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(182): yii\base\InlineAction->runWithParams(Array)
+#25 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Module.php(547): yii\base\Controller->runAction('login', Array)
+#26 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Application.php(105): yii\base\Module->runAction('site/login', Array)
+#27 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Application.php(382): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 C:\laragon\www\arsip-adpim-main\web\index.php(22): yii\base\Application->run()
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user 'admin_arsipp'@'localhost' (using password: YES) in C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php:647
+Stack trace:
+#0 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1066): yii\db\Connection->open()
+#1 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1053): yii\db\Connection->getMasterPdo()
+#2 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(401): yii\db\Connection->getSlavePdo(true)
+#3 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(425): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(58): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\QueryBuilder.php(118): yii\base\BaseObject->__construct(Array)
+#7 [internal function]: yii\db\QueryBuilder->__construct(Object(yii\db\Connection), Array)
+#8 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(418): ReflectionClass->newInstanceArgs(Array)
+#9 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(174): yii\di\Container->build('yii\\db\\mysql\\Qu...', Array, Array)
+#10 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\BaseYii.php(350): yii\di\Container->get('yii\\db\\mysql\\Qu...', Array)
+#11 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(265): yii\BaseYii::createObject('yii\\db\\mysql\\Qu...', Array)
+#12 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#13 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(883): yii\db\Schema->getQueryBuilder()
+#14 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(157): yii\db\Connection->getQueryBuilder()
+#15 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(481): yii\db\Query->createCommand(Object(yii\db\Connection))
+#16 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(368): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#17 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(60): yii\db\Query->count()
+#18 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(38): app\models\LoginForm->terblokir('::1')
+#19 C:\laragon\www\arsip-adpim-main\controllers\SiteController.php(51): app\models\LoginForm->login()
+#20 [internal function]: app\controllers\SiteController->actionLogin()
+#21 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#22 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(182): yii\base\InlineAction->runWithParams(Array)
+#23 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Module.php(547): yii\base\Controller->runAction('login', Array)
+#24 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Application.php(105): yii\base\Module->runAction('site/login', Array)
+#25 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Application.php(382): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 C:\laragon\www\arsip-adpim-main\web\index.php(22): yii\base\Application->run()
+#27 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 1045
+    [2] => Access denied for user 'admin_arsipp'@'localhost' (using password: YES)
+)
+
+2026-11-16 17:08:41 [::1][-][hcejgu0jc1oednoo526qat4tq9][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-arsip' => 'alZcHHigmmraoYkICdQLXPRQCd7UUp0tk_-uGNrUGkBTZgh1POPQCajM-kFal1gspD98r4Ye6V-qtstMvKQqCA=='
+    'LoginForm' => [
+        'username' => 'firja'
+        'password' => 'admin12345'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'ARSIPSESS' => 'hcejgu0jc1oednoo526qat4tq9'
+    '_csrf-arsip' => '33b96a40a28f41f7d8d26a6857829610b6f308f881b4644cd86aebdd1ec25331a:2:{i:0;s:11:\"_csrf-arsip\";i:1;s:32:\"90TiDCJcrmsISCSpPouqRLtr9IeTfp0H\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost:8090/'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\laragon\\www\\arsip-adpim-main\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '61298'
+    'SERVER_SOFTWARE' => 'PHP 8.1.10 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8090'
+    'REQUEST_URI' => '/masuk'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\laragon\\www\\arsip-adpim-main\\web\\index.php'
+    'PATH_INFO' => '/masuk'
+    'PHP_SELF' => '/index.php/masuk'
+    'HTTP_HOST' => 'localhost:8090'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '169'
+    'HTTP_CONTENT_LENGTH' => '169'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://localhost:8090'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8090/masuk'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,id;q=0.8'
+    'HTTP_COOKIE' => 'ARSIPSESS=hcejgu0jc1oednoo526qat4tq9; _csrf-arsip=33b96a40a28f41f7d8d26a6857829610b6f308f881b4644cd86aebdd1ec25331a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22_csrf-arsip%22%3Bi%3A1%3Bs%3A32%3A%2290TiDCJcrmsISCSpPouqRLtr9IeTfp0H%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1794823721.6291
+    'REQUEST_TIME' => 1794823721
+]
+2026-11-16 17:10:07 [::1][-][hcejgu0jc1oednoo526qat4tq9][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin_arsipp'@'localhost' (using password: YES) in C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php:721
+Stack trace:
+#0 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(721): PDO->__construct('mysql:host=loca...', 'admin_arsipp', 'fadliaja123', NULL)
+#1 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(636): yii\db\Connection->createPdoInstance()
+#2 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1066): yii\db\Connection->open()
+#3 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1053): yii\db\Connection->getMasterPdo()
+#4 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(401): yii\db\Connection->getSlavePdo(true)
+#5 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(425): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(58): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\QueryBuilder.php(118): yii\base\BaseObject->__construct(Array)
+#9 [internal function]: yii\db\QueryBuilder->__construct(Object(yii\db\Connection), Array)
+#10 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(418): ReflectionClass->newInstanceArgs(Array)
+#11 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(174): yii\di\Container->build('yii\\db\\mysql\\Qu...', Array, Array)
+#12 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\BaseYii.php(350): yii\di\Container->get('yii\\db\\mysql\\Qu...', Array)
+#13 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(265): yii\BaseYii::createObject('yii\\db\\mysql\\Qu...', Array)
+#14 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#15 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(883): yii\db\Schema->getQueryBuilder()
+#16 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(157): yii\db\Connection->getQueryBuilder()
+#17 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(481): yii\db\Query->createCommand(Object(yii\db\Connection))
+#18 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(368): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#19 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(60): yii\db\Query->count()
+#20 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(38): app\models\LoginForm->terblokir('::1')
+#21 C:\laragon\www\arsip-adpim-main\controllers\SiteController.php(51): app\models\LoginForm->login()
+#22 [internal function]: app\controllers\SiteController->actionLogin()
+#23 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#24 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(182): yii\base\InlineAction->runWithParams(Array)
+#25 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Module.php(547): yii\base\Controller->runAction('login', Array)
+#26 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Application.php(105): yii\base\Module->runAction('site/login', Array)
+#27 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Application.php(382): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 C:\laragon\www\arsip-adpim-main\web\index.php(22): yii\base\Application->run()
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user 'admin_arsipp'@'localhost' (using password: YES) in C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php:647
+Stack trace:
+#0 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1066): yii\db\Connection->open()
+#1 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1053): yii\db\Connection->getMasterPdo()
+#2 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(401): yii\db\Connection->getSlavePdo(true)
+#3 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(425): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(58): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\QueryBuilder.php(118): yii\base\BaseObject->__construct(Array)
+#7 [internal function]: yii\db\QueryBuilder->__construct(Object(yii\db\Connection), Array)
+#8 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(418): ReflectionClass->newInstanceArgs(Array)
+#9 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(174): yii\di\Container->build('yii\\db\\mysql\\Qu...', Array, Array)
+#10 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\BaseYii.php(350): yii\di\Container->get('yii\\db\\mysql\\Qu...', Array)
+#11 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(265): yii\BaseYii::createObject('yii\\db\\mysql\\Qu...', Array)
+#12 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#13 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(883): yii\db\Schema->getQueryBuilder()
+#14 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(157): yii\db\Connection->getQueryBuilder()
+#15 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(481): yii\db\Query->createCommand(Object(yii\db\Connection))
+#16 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(368): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#17 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(60): yii\db\Query->count()
+#18 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(38): app\models\LoginForm->terblokir('::1')
+#19 C:\laragon\www\arsip-adpim-main\controllers\SiteController.php(51): app\models\LoginForm->login()
+#20 [internal function]: app\controllers\SiteController->actionLogin()
+#21 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#22 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(182): yii\base\InlineAction->runWithParams(Array)
+#23 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Module.php(547): yii\base\Controller->runAction('login', Array)
+#24 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Application.php(105): yii\base\Module->runAction('site/login', Array)
+#25 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Application.php(382): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 C:\laragon\www\arsip-adpim-main\web\index.php(22): yii\base\Application->run()
+#27 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 1045
+    [2] => Access denied for user 'admin_arsipp'@'localhost' (using password: YES)
+)
+
+2026-11-16 17:10:07 [::1][-][hcejgu0jc1oednoo526qat4tq9][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-arsip' => '6gEJil8BNn59RnhUHkK89z4LTbU3C-TBxnx8CNAjxHzTMV3jG0J8HQ8rCx1NAe-HbmQ4xGVHkLP_NRlctlP0NA=='
+    'LoginForm' => [
+        'username' => 'firja'
+        'password' => 'admin12345'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'ARSIPSESS' => 'hcejgu0jc1oednoo526qat4tq9'
+    '_csrf-arsip' => '33b96a40a28f41f7d8d26a6857829610b6f308f881b4644cd86aebdd1ec25331a:2:{i:0;s:11:\"_csrf-arsip\";i:1;s:32:\"90TiDCJcrmsISCSpPouqRLtr9IeTfp0H\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost:8090/'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\laragon\\www\\arsip-adpim-main\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '60054'
+    'SERVER_SOFTWARE' => 'PHP 8.1.10 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8090'
+    'REQUEST_URI' => '/masuk'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\laragon\\www\\arsip-adpim-main\\web\\index.php'
+    'PATH_INFO' => '/masuk'
+    'PHP_SELF' => '/index.php/masuk'
+    'HTTP_HOST' => 'localhost:8090'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '169'
+    'HTTP_CONTENT_LENGTH' => '169'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://localhost:8090'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8090/masuk'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,id;q=0.8'
+    'HTTP_COOKIE' => 'ARSIPSESS=hcejgu0jc1oednoo526qat4tq9; _csrf-arsip=33b96a40a28f41f7d8d26a6857829610b6f308f881b4644cd86aebdd1ec25331a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22_csrf-arsip%22%3Bi%3A1%3Bs%3A32%3A%2290TiDCJcrmsISCSpPouqRLtr9IeTfp0H%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1794823807.8442
+    'REQUEST_TIME' => 1794823807
+]
+2026-11-16 17:16:48 [::1][-][hcejgu0jc1oednoo526qat4tq9][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin_arsipp'@'localhost' (using password: YES) in C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php:721
+Stack trace:
+#0 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(721): PDO->__construct('mysql:host=loca...', 'admin_arsipp', 'fadliaja123', NULL)
+#1 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(636): yii\db\Connection->createPdoInstance()
+#2 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1066): yii\db\Connection->open()
+#3 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1053): yii\db\Connection->getMasterPdo()
+#4 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(401): yii\db\Connection->getSlavePdo(true)
+#5 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(425): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(58): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\QueryBuilder.php(118): yii\base\BaseObject->__construct(Array)
+#9 [internal function]: yii\db\QueryBuilder->__construct(Object(yii\db\Connection), Array)
+#10 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(418): ReflectionClass->newInstanceArgs(Array)
+#11 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(174): yii\di\Container->build('yii\\db\\mysql\\Qu...', Array, Array)
+#12 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\BaseYii.php(350): yii\di\Container->get('yii\\db\\mysql\\Qu...', Array)
+#13 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(265): yii\BaseYii::createObject('yii\\db\\mysql\\Qu...', Array)
+#14 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#15 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(883): yii\db\Schema->getQueryBuilder()
+#16 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(157): yii\db\Connection->getQueryBuilder()
+#17 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(481): yii\db\Query->createCommand(Object(yii\db\Connection))
+#18 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(368): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#19 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(60): yii\db\Query->count()
+#20 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(38): app\models\LoginForm->terblokir('::1')
+#21 C:\laragon\www\arsip-adpim-main\controllers\SiteController.php(51): app\models\LoginForm->login()
+#22 [internal function]: app\controllers\SiteController->actionLogin()
+#23 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#24 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(182): yii\base\InlineAction->runWithParams(Array)
+#25 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Module.php(547): yii\base\Controller->runAction('login', Array)
+#26 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Application.php(105): yii\base\Module->runAction('site/login', Array)
+#27 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Application.php(382): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 C:\laragon\www\arsip-adpim-main\web\index.php(22): yii\base\Application->run()
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user 'admin_arsipp'@'localhost' (using password: YES) in C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php:647
+Stack trace:
+#0 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1066): yii\db\Connection->open()
+#1 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1053): yii\db\Connection->getMasterPdo()
+#2 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(401): yii\db\Connection->getSlavePdo(true)
+#3 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(425): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(58): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\QueryBuilder.php(118): yii\base\BaseObject->__construct(Array)
+#7 [internal function]: yii\db\QueryBuilder->__construct(Object(yii\db\Connection), Array)
+#8 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(418): ReflectionClass->newInstanceArgs(Array)
+#9 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(174): yii\di\Container->build('yii\\db\\mysql\\Qu...', Array, Array)
+#10 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\BaseYii.php(350): yii\di\Container->get('yii\\db\\mysql\\Qu...', Array)
+#11 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(265): yii\BaseYii::createObject('yii\\db\\mysql\\Qu...', Array)
+#12 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#13 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(883): yii\db\Schema->getQueryBuilder()
+#14 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(157): yii\db\Connection->getQueryBuilder()
+#15 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(481): yii\db\Query->createCommand(Object(yii\db\Connection))
+#16 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(368): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#17 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(60): yii\db\Query->count()
+#18 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(38): app\models\LoginForm->terblokir('::1')
+#19 C:\laragon\www\arsip-adpim-main\controllers\SiteController.php(51): app\models\LoginForm->login()
+#20 [internal function]: app\controllers\SiteController->actionLogin()
+#21 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#22 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(182): yii\base\InlineAction->runWithParams(Array)
+#23 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Module.php(547): yii\base\Controller->runAction('login', Array)
+#24 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Application.php(105): yii\base\Module->runAction('site/login', Array)
+#25 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Application.php(382): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 C:\laragon\www\arsip-adpim-main\web\index.php(22): yii\base\Application->run()
+#27 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 1045
+    [2] => Access denied for user 'admin_arsipp'@'localhost' (using password: YES)
+)
+
+2026-11-16 17:16:48 [::1][-][hcejgu0jc1oednoo526qat4tq9][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-arsip' => '6gEJil8BNn59RnhUHkK89z4LTbU3C-TBxnx8CNAjxHzTMV3jG0J8HQ8rCx1NAe-HbmQ4xGVHkLP_NRlctlP0NA=='
+    'LoginForm' => [
+        'username' => 'firja'
+        'password' => 'admin12345'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'ARSIPSESS' => 'hcejgu0jc1oednoo526qat4tq9'
+    '_csrf-arsip' => '33b96a40a28f41f7d8d26a6857829610b6f308f881b4644cd86aebdd1ec25331a:2:{i:0;s:11:\"_csrf-arsip\";i:1;s:32:\"90TiDCJcrmsISCSpPouqRLtr9IeTfp0H\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost:8090/'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\laragon\\www\\arsip-adpim-main\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '64190'
+    'SERVER_SOFTWARE' => 'PHP 8.1.10 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8090'
+    'REQUEST_URI' => '/masuk'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\laragon\\www\\arsip-adpim-main\\web\\index.php'
+    'PATH_INFO' => '/masuk'
+    'PHP_SELF' => '/index.php/masuk'
+    'HTTP_HOST' => 'localhost:8090'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '169'
+    'HTTP_CONTENT_LENGTH' => '169'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://localhost:8090'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8090/masuk'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,id;q=0.8'
+    'HTTP_COOKIE' => 'ARSIPSESS=hcejgu0jc1oednoo526qat4tq9; _csrf-arsip=33b96a40a28f41f7d8d26a6857829610b6f308f881b4644cd86aebdd1ec25331a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22_csrf-arsip%22%3Bi%3A1%3Bs%3A32%3A%2290TiDCJcrmsISCSpPouqRLtr9IeTfp0H%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1794824208.2243
+    'REQUEST_TIME' => 1794824208
+]
+2026-11-16 17:17:11 [::1][-][hcejgu0jc1oednoo526qat4tq9][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin_arsipp'@'localhost' (using password: YES) in C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php:721
+Stack trace:
+#0 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(721): PDO->__construct('mysql:host=loca...', 'admin_arsipp', 'fadliaja123', NULL)
+#1 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(636): yii\db\Connection->createPdoInstance()
+#2 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1066): yii\db\Connection->open()
+#3 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1053): yii\db\Connection->getMasterPdo()
+#4 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(401): yii\db\Connection->getSlavePdo(true)
+#5 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(425): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(58): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\QueryBuilder.php(118): yii\base\BaseObject->__construct(Array)
+#9 [internal function]: yii\db\QueryBuilder->__construct(Object(yii\db\Connection), Array)
+#10 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(418): ReflectionClass->newInstanceArgs(Array)
+#11 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(174): yii\di\Container->build('yii\\db\\mysql\\Qu...', Array, Array)
+#12 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\BaseYii.php(350): yii\di\Container->get('yii\\db\\mysql\\Qu...', Array)
+#13 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(265): yii\BaseYii::createObject('yii\\db\\mysql\\Qu...', Array)
+#14 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#15 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(883): yii\db\Schema->getQueryBuilder()
+#16 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(157): yii\db\Connection->getQueryBuilder()
+#17 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(481): yii\db\Query->createCommand(Object(yii\db\Connection))
+#18 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(368): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#19 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(60): yii\db\Query->count()
+#20 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(38): app\models\LoginForm->terblokir('::1')
+#21 C:\laragon\www\arsip-adpim-main\controllers\SiteController.php(51): app\models\LoginForm->login()
+#22 [internal function]: app\controllers\SiteController->actionLogin()
+#23 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#24 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(182): yii\base\InlineAction->runWithParams(Array)
+#25 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Module.php(547): yii\base\Controller->runAction('login', Array)
+#26 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Application.php(105): yii\base\Module->runAction('site/login', Array)
+#27 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Application.php(382): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 C:\laragon\www\arsip-adpim-main\web\index.php(22): yii\base\Application->run()
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user 'admin_arsipp'@'localhost' (using password: YES) in C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php:647
+Stack trace:
+#0 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1066): yii\db\Connection->open()
+#1 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1053): yii\db\Connection->getMasterPdo()
+#2 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(401): yii\db\Connection->getSlavePdo(true)
+#3 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(425): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\QueryBuilder.php(58): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\QueryBuilder.php(118): yii\base\BaseObject->__construct(Array)
+#7 [internal function]: yii\db\QueryBuilder->__construct(Object(yii\db\Connection), Array)
+#8 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(418): ReflectionClass->newInstanceArgs(Array)
+#9 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\di\Container.php(174): yii\di\Container->build('yii\\db\\mysql\\Qu...', Array, Array)
+#10 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\BaseYii.php(350): yii\di\Container->get('yii\\db\\mysql\\Qu...', Array)
+#11 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(265): yii\BaseYii::createObject('yii\\db\\mysql\\Qu...', Array)
+#12 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#13 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(883): yii\db\Schema->getQueryBuilder()
+#14 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(157): yii\db\Connection->getQueryBuilder()
+#15 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(481): yii\db\Query->createCommand(Object(yii\db\Connection))
+#16 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Query.php(368): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#17 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(60): yii\db\Query->count()
+#18 C:\laragon\www\arsip-adpim-main\models\LoginForm.php(38): app\models\LoginForm->terblokir('::1')
+#19 C:\laragon\www\arsip-adpim-main\controllers\SiteController.php(51): app\models\LoginForm->login()
+#20 [internal function]: app\controllers\SiteController->actionLogin()
+#21 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#22 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(182): yii\base\InlineAction->runWithParams(Array)
+#23 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Module.php(547): yii\base\Controller->runAction('login', Array)
+#24 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Application.php(105): yii\base\Module->runAction('site/login', Array)
+#25 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Application.php(382): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 C:\laragon\www\arsip-adpim-main\web\index.php(22): yii\base\Application->run()
+#27 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 1045
+    [2] => Access denied for user 'admin_arsipp'@'localhost' (using password: YES)
+)
+
+2026-11-16 17:17:11 [::1][-][hcejgu0jc1oednoo526qat4tq9][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-arsip' => 'dtWXYfk7a9pgq10Vz4tws5yl7WxoUoULDN2dOd3lR2FP5cMIvXghuRLGLlycyCPDzMqYHToe8Xk1lPhtu5V3KQ=='
+    'LoginForm' => [
+        'username' => 'firja'
+        'password' => '---'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'ARSIPSESS' => 'hcejgu0jc1oednoo526qat4tq9'
+    '_csrf-arsip' => '33b96a40a28f41f7d8d26a6857829610b6f308f881b4644cd86aebdd1ec25331a:2:{i:0;s:11:\"_csrf-arsip\";i:1;s:32:\"90TiDCJcrmsISCSpPouqRLtr9IeTfp0H\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost:8090/'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\laragon\\www\\arsip-adpim-main\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '64104'
+    'SERVER_SOFTWARE' => 'PHP 8.1.10 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8090'
+    'REQUEST_URI' => '/masuk'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\laragon\\www\\arsip-adpim-main\\web\\index.php'
+    'PATH_INFO' => '/masuk'
+    'PHP_SELF' => '/index.php/masuk'
+    'HTTP_HOST' => 'localhost:8090'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '162'
+    'HTTP_CONTENT_LENGTH' => '162'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://localhost:8090'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8090/masuk'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,id;q=0.8'
+    'HTTP_COOKIE' => 'ARSIPSESS=hcejgu0jc1oednoo526qat4tq9; _csrf-arsip=33b96a40a28f41f7d8d26a6857829610b6f308f881b4644cd86aebdd1ec25331a%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22_csrf-arsip%22%3Bi%3A1%3Bs%3A32%3A%2290TiDCJcrmsISCSpPouqRLtr9IeTfp0H%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1794824231.3171
+    'REQUEST_TIME' => 1794824231
+]
+2026-11-16 17:49:29 [::1][-][ju1trusq8u286vlrkta2tfpm7k][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin_arsipp'@'localhost' (using password: YES) in C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php:721
+Stack trace:
+#0 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(721): PDO->__construct('mysql:host=loca...', 'admin_arsipp', 'fadliaja123', NULL)
+#1 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(636): yii\db\Connection->createPdoInstance()
+#2 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1066): yii\db\Connection->open()
+#3 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1053): yii\db\Connection->getMasterPdo()
+#4 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo(true)
+#5 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare(true)
+#6 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(370): yii\db\Command->queryAll()
+#8 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(138): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(757): yii\db\mysql\Schema->loadTableSchema('user')
+#10 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%user}}', 'schema', false)
+#11 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\ActiveRecord.php(434): yii\db\Schema->getTableSchema('{{%user}}')
+#12 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\ActiveRecord.php(261): yii\db\ActiveRecord::getTableSchema()
+#13 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\ActiveRecord.php(233): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#14 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition(Array, Array)
+#15 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\BaseActiveRecord.php(109): yii\db\ActiveRecord::findByCondition(Array)
+#16 C:\laragon\www\arsip-adpim-main\models\User.php(25): yii\db\BaseActiveRecord::findOne(Array)
+#17 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\User.php(698): app\models\User::findIdentity(1)
+#18 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\User.php(200): yii\web\User->renewAuthStatus()
+#19 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\User.php(367): yii\web\User->getIdentity()
+#20 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\filters\AccessRule.php(243): yii\web\User->getIsGuest()
+#21 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\filters\AccessRule.php(175): yii\filters\AccessRule->matchRole(Object(yii\web\User))
+#22 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\filters\AccessControl.php(123): yii\filters\AccessRule->allows(Object(yii\base\InlineAction), Object(yii\web\User), Object(yii\web\Request))
+#23 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\ActionFilter.php(80): yii\filters\AccessControl->beforeAction(Object(yii\base\InlineAction))
+#24 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#25 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Component.php(648): call_user_func(Array, Object(yii\base\ActionEvent))
+#26 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(310): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#27 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Controller.php(334): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#28 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(180): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#29 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Module.php(547): yii\base\Controller->runAction('index', Array)
+#30 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Application.php(105): yii\base\Module->runAction('site/index', Array)
+#31 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Application.php(382): yii\web\Application->handleRequest(Object(yii\web\Request))
+#32 C:\laragon\www\arsip-adpim-main\web\index.php(22): yii\base\Application->run()
+#33 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user 'admin_arsipp'@'localhost' (using password: YES) in C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php:647
+Stack trace:
+#0 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1066): yii\db\Connection->open()
+#1 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Connection.php(1053): yii\db\Connection->getMasterPdo()
+#2 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo(true)
+#3 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare(true)
+#4 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(370): yii\db\Command->queryAll()
+#6 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\mysql\Schema.php(138): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(757): yii\db\mysql\Schema->loadTableSchema('user')
+#8 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%user}}', 'schema', false)
+#9 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\ActiveRecord.php(434): yii\db\Schema->getTableSchema('{{%user}}')
+#10 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\ActiveRecord.php(261): yii\db\ActiveRecord::getTableSchema()
+#11 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\ActiveRecord.php(233): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#12 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition(Array, Array)
+#13 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\db\BaseActiveRecord.php(109): yii\db\ActiveRecord::findByCondition(Array)
+#14 C:\laragon\www\arsip-adpim-main\models\User.php(25): yii\db\BaseActiveRecord::findOne(Array)
+#15 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\User.php(698): app\models\User::findIdentity(1)
+#16 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\User.php(200): yii\web\User->renewAuthStatus()
+#17 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\User.php(367): yii\web\User->getIdentity()
+#18 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\filters\AccessRule.php(243): yii\web\User->getIsGuest()
+#19 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\filters\AccessRule.php(175): yii\filters\AccessRule->matchRole(Object(yii\web\User))
+#20 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\filters\AccessControl.php(123): yii\filters\AccessRule->allows(Object(yii\base\InlineAction), Object(yii\web\User), Object(yii\web\Request))
+#21 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\ActionFilter.php(80): yii\filters\AccessControl->beforeAction(Object(yii\base\InlineAction))
+#22 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#23 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Component.php(648): call_user_func(Array, Object(yii\base\ActionEvent))
+#24 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(310): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#25 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Controller.php(334): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#26 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Controller.php(180): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#27 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Module.php(547): yii\base\Controller->runAction('index', Array)
+#28 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\web\Application.php(105): yii\base\Module->runAction('site/index', Array)
+#29 C:\laragon\www\arsip-adpim-main\vendor\yiisoft\yii2\base\Application.php(382): yii\web\Application->handleRequest(Object(yii\web\Request))
+#30 C:\laragon\www\arsip-adpim-main\web\index.php(22): yii\base\Application->run()
+#31 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 1045
+    [2] => Access denied for user 'admin_arsipp'@'localhost' (using password: YES)
+)
+
+2026-11-16 17:49:28 [::1][-][ju1trusq8u286vlrkta2tfpm7k][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'ARSIPSESS' => 'ju1trusq8u286vlrkta2tfpm7k'
+    '_csrf-arsip' => '26306bf7a94084dc1c596e4750a4e4b8e18135a14d5c6555a067b771719b3acaa:2:{i:0;s:11:\"_csrf-arsip\";i:1;s:32:\"mNROiCDOarVI1o-LO-cJIyZCF8sgLW8J\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'e1KQ-Z1e79wkWOOERMxsvhIpMrdmxmPD'
+    '__expire' => 1794854256
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\laragon\\www\\arsip-adpim-main\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '60146'
+    'SERVER_SOFTWARE' => 'PHP 8.1.10 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8090'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\laragon\\www\\arsip-adpim-main\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8090'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Not-A.Brand\";v=\"99\", \"Google Chrome\";v=\"157\", \"Chromium\";v=\"157\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,id;q=0.8'
+    'HTTP_COOKIE' => 'ARSIPSESS=ju1trusq8u286vlrkta2tfpm7k; _csrf-arsip=26306bf7a94084dc1c596e4750a4e4b8e18135a14d5c6555a067b771719b3acaa%3A2%3A%7Bi%3A0%3Bs%3A11%3A%22_csrf-arsip%22%3Bi%3A1%3Bs%3A32%3A%22mNROiCDOarVI1o-LO-cJIyZCF8sgLW8J%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1794826168.6529
+    'REQUEST_TIME' => 1794826168
+]

@@ -22,6 +22,31 @@ foreach ([['username' => ['nested' => ['x']], 'password' => 'x'],
 $login = new app\models\LoginForm(['username' => ' admin ', 'password' => ' secret ']);
 periksa($login->validate() && $login->username === 'admin' && $login->password === ' secret ', 'Username dinormalisasi dan spasi password dipertahankan');
 
+// Formulir tambah pengguna. Aturan keunikan username memerlukan database, jadi dilepas di sini.
+class UserFormLokal extends app\models\UserForm
+{
+    public function rules()
+    {
+        return array_values(array_filter(parent::rules(), function ($aturan) {
+            return $aturan[1] !== 'unique';
+        }));
+    }
+}
+$uji = new UserFormLokal(['username' => ' budi.santoso ', 'password' => 'rahasia1', 'password_ulang' => 'rahasia1']);
+periksa($uji->validate() && $uji->username === 'budi.santoso', 'Pengguna baru valid dan username dinormalisasi');
+$uji = new UserFormLokal(['username' => 'budi', 'password' => 'abc', 'password_ulang' => 'abc']);
+periksa(!$uji->validate() && $uji->hasErrors('password'), 'Password kurang dari 6 karakter ditolak');
+$uji = new UserFormLokal(['username' => 'budi', 'password' => 'rahasia1', 'password_ulang' => 'rahasia2']);
+periksa(!$uji->validate() && $uji->hasErrors('password_ulang'), 'Ulangi password yang berbeda ditolak');
+$uji = new UserFormLokal(['username' => 'budi', 'password' => str_repeat('a', 73), 'password_ulang' => str_repeat('a', 73)]);
+periksa(!$uji->validate() && $uji->hasErrors('password'), 'Password lebih dari 72 karakter ditolak');
+foreach (['ab', 'budi santoso', 'budi<script>', str_repeat('a', 51), '   '] as $nama) {
+    $uji = new UserFormLokal(['username' => $nama, 'password' => 'rahasia1', 'password_ulang' => 'rahasia1']);
+    periksa(!$uji->validate() && $uji->hasErrors('username'), 'Username tidak valid ditolak: ' . var_export($nama, true));
+}
+$uji = new UserFormLokal(['username' => ['x'], 'password' => ['y'], 'password_ulang' => 'z']);
+periksa(!$uji->validate(), 'Isian berupa array ditolak');
+
 // Schema mandiri agar aturan model dapat diperiksa tanpa database produksi.
 class ArsipValidasi extends app\models\Arsip
 {

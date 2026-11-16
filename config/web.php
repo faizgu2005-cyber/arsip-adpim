@@ -61,6 +61,8 @@ return [
                 'masuk' => 'site/login',
                 'keluar' => 'site/logout',
                 'berkas/<id:\d+>' => 'arsip/berkas',
+                'pengguna' => 'pengguna/index',
+                'pengguna/tambah' => 'pengguna/create',
                 '<jenis:(sambutan|paparan|tor)>' => 'arsip/index',
                 '<jenis:(sambutan|paparan|tor)>/tambah' => 'arsip/create',
                 '<jenis:(sambutan|paparan|tor)>/<id:\d+>/edit' => 'arsip/update',
